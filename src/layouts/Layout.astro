@@ -5,19 +5,14 @@ import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import { ViewTransitions } from "astro:transitions"
 
-interface Props {
-  title: string
-  description: string
-}
 
-const { description, title } = Astro.props
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content="Conoce a Miguel Osorio, polivalente desarrollador, experto en dar soluciones a los más complejos problemas." />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
