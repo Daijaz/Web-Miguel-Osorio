@@ -1,0 +1,73 @@
+---
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+
+
+const PROJECTS = [
+  {
+    title: "Sistema de Gestión de Egresados",
+    description: "Plataforma web desarrollada para gestionar y organizar los datos de los egresados de una institución educativa. Permite realizar un seguimiento de la información personal, títulos obtenidos, y gestiones realizadas, además de ofrecer funcionalidades para gestionar eventos y generar gráficos estadísticos basados en la información almacenada.",
+    link: "https://github.com/Daijaz/Aplicativo-Egresados",  // Reemplaza con el enlace real si lo tienes
+    image: "/projects/egresados.webp"
+  },
+  {
+  title: "Tienda de Vitrales Tiffany",
+  description: "Tienda en línea especializada en la venta de vitrales Tiffany hechos a mano. Ofrece una amplia variedad de productos artesanales para decoración del hogar, desde lámparas y ventanas hasta figuras decorativas. Desarrollada con Shopify para gestionar productos, pedidos y ofrecer una experiencia de compra fluida.",
+  link: "https://www.elyunquedecristal.com/",  // Reemplaza con el enlace real si lo tienes
+  image: "/projects/vitrales-tiffany.webp"
+  },
+  {
+    title: "Listfy - Crea y guarda tus propias playlists",
+    description: "Crea y guarda tus propias playlists personalizadas en Spotify. Utiliza React, Tailwind CSS y la Spotify Web API para integrarse con tu cuenta de Spotify y personalizar tu experiencia musical.",
+    link: "https://listfynow.netlify.app/",
+    image: "/projects/listfy.webp"
+  },
+  {
+  title: "FilmFinder - Descubre películas al azar",
+  description: "Aplicación interactiva para descubrir películas basadas en tus géneros favoritos. Construido con HTML, CSS, JavaScript y TMDb API para ofrecer recomendaciones aleatorias personalizadas.",
+  link: "https://filmfindernow.netlify.app/",
+  image: "/projects/filmfinder.webp"
+  },
+  {
+  title: "ShortURL - Acorta tus enlaces fácilmente",
+  description: "Convierte enlaces largos en URLs cortas y compartibles con esta herramienta. Construido con JavaScript e integrado con Rebrandly API para simplificar la gestión de enlaces.",
+  link: "https://shorturlnow.netlify.app/",
+  image: "/projects/shorturl.webp"
+  }
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, link}) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+

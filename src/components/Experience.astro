@@ -1,0 +1,29 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Julio 2023 - Julio 2024",
+    title: "Programador en el Semillero de Investigación Obelix",
+    company: "Universidad Libre",
+    description:
+      "Participé en el desarrollo de un sistema de gestión y control de egresados, integrando tecnologías frontend y backend bajo el patrón MVC. Contribuí en la construcción de prototipos y la implementación de funcionalidades clave, incluyendo la gestión de egresados, títulos y observaciones. También participé en el diseño y optimización de la base de datos, asegurando una correcta persistencia y recuperación de datos.",
+  },
+  {
+    date: "Junio 2022 - Diciembre 2022",
+    title: "Practicante",
+    company: "Audifarma S.A.",
+    description:
+      "Desarrollé scripts en Bash y automatización de servidores GlassFish enfocados en Java EE, optimizando la eficiencia operativa. Resolví problemas de redes en estaciones de trabajo, garantizando la conectividad y el rendimiento. Además, gestioné portales de administración como FortiClient y Aruba, asegurando la seguridad y el control de la infraestructura. Creé aplicativos web CRUD utilizando HTML, CSS, JavaScript y PHP, mejorando la experiencia de usuario y la funcionalidad de las aplicaciones.",
+  }
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
